@@ -167,100 +167,184 @@
 
       <section class="section projects" id="projects" aria-labelledby="projects-title">
         <div class="container">
-          <div class="section-heading">
-            <p class="section-kicker">Проекты</p>
-            <h2 id="projects-title">Кейсы, где UX соединяется с визуальной системой</h2>
+          <div class="projects__top">
+            <div class="section-heading">
+              <p class="section-kicker">Проекты</p>
+              <h2 id="projects-title">Кейсы, где UX соединяется с визуальной системой</h2>
+            </div>
+
+            <div class="carousel-controls" aria-label="Навигация по проектам">
+              <span class="carousel-counter" data-project-counter aria-live="polite">01 / 03</span>
+              <button
+                class="carousel-button"
+                type="button"
+                aria-label="Предыдущий проект"
+                data-carousel-prev
+              >
+                ←
+              </button>
+              <button
+                class="carousel-button"
+                type="button"
+                aria-label="Следующий проект"
+                data-carousel-next
+              >
+                →
+              </button>
+            </div>
           </div>
 
-          <div class="project-grid">
-            <article class="project-card">
-              <img
-                class="project-card__image"
-                src="Hand and iPhone 16 Pro.png"
-                alt="Превью мобильного приложения Kazakh Theatre"
-                loading="lazy"
-              />
-              <div class="project-card__content">
-                <p class="project-card__category">UI/UX &amp; Mobile App Design</p>
-                <h3>Kazakh Theatre</h3>
-                <p>
-                  Мобильное приложение для казахстанских театров. Пользователь
-                  может смотреть спектакли и сеансы, узнавать информацию о
-                  театрах и постановках, покупать билеты и выбирать места через
-                  интерактивную схему зала.
-                </p>
-                <ul class="tag-list" aria-label="Навыки проекта">
-                  <li>Figma</li>
-                  <li>UX Research</li>
-                  <li>Wireframing</li>
-                  <li>UI Design</li>
-                  <li>Prototype</li>
-                </ul>
-                <div class="project-card__actions">
-                  <button
-                    class="button button--case"
-                    type="button"
-                    data-modal-target="modal-theatre"
-                    aria-haspopup="dialog"
-                  >
-                    Смотреть кейс
-                  </button>
-                  <a
-                    class="button button--external"
-                    href="https://www.figma.com/design/WFjf4aRF8Q6xmvtOjMWtJG/UI-UX-term-2-ASKARBEK?node-id=0-1&amp;t=xUuWxmCb78Es4gCb-1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Open Kazakh Theatre project in Figma"
-                  >
-                    Open in Figma <span aria-hidden="true">↗</span>
-                  </a>
+          <div
+            class="project-carousel"
+            role="region"
+            aria-label="Избранные проекты"
+            data-project-carousel
+          >
+            <div class="project-track" data-project-track>
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img
+                    class="project-card__image"
+                    src="Hand and iPhone 16 Pro.png"
+                    alt="Превью мобильного приложения Kazakh Theatre"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
-            </article>
+                <div class="project-card__content">
+                  <p class="project-card__category">UI/UX &amp; Mobile App Design</p>
+                  <h3>Kazakh Theatre</h3>
+                  <p>
+                    Мобильное приложение для казахстанских театров. Пользователь
+                    может смотреть спектакли и сеансы, узнавать информацию о
+                    театрах и постановках, покупать билеты и выбирать места через
+                    интерактивную схему зала.
+                  </p>
+                  <ul class="tag-list" aria-label="Навыки проекта">
+                    <li>Figma</li>
+                    <li>UX Research</li>
+                    <li>Wireframing</li>
+                    <li>UI Design</li>
+                    <li>Prototype</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <button
+                      class="button button--case"
+                      type="button"
+                      data-modal-target="modal-theatre"
+                      aria-haspopup="dialog"
+                    >
+                      Смотреть кейс
+                    </button>
+                    <a
+                      class="button button--external"
+                      href="https://www.figma.com/design/WFjf4aRF8Q6xmvtOjMWtJG/UI-UX-term-2-ASKARBEK?node-id=0-1&amp;t=xUuWxmCb78Es4gCb-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Kazakh Theatre project in Figma"
+                    >
+                      Open in Figma <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
 
-            <article class="project-card">
-              <img
-                class="project-card__image"
-                src="iPad Pro MockUp.png"
-                alt="Превью корпоративной обложки и визуальной концепции"
-                loading="lazy"
-              />
-              <div class="project-card__content">
-                <p class="project-card__category">Graphic Design &amp; Branding</p>
-                <h3>Corporate Identity &amp; Cover Concept</h3>
-                <p>
-                  Разработка визуальной концепции и корпоративной обложки для
-                  компании на основе исследования визуального позиционирования
-                  конкурентов в открытых источниках.
-                </p>
-                <ul class="tag-list" aria-label="Навыки проекта">
-                  <li>Photoshop</li>
-                  <li>Illustrator</li>
-                  <li>Branding</li>
-                  <li>Research</li>
-                  <li>Visual Design</li>
-                </ul>
-                <div class="project-card__actions">
-                  <button
-                    class="button button--case"
-                    type="button"
-                    data-modal-target="modal-cover"
-                    aria-haspopup="dialog"
-                  >
-                    Смотреть кейс
-                  </button>
-                  <a
-                    class="button button--external"
-                    href="https://www.figma.com/design/qLLO3kq0DQ9p4RsUnLdhOi/Lesson-5--Copy-?node-id=0-1&amp;t=mnkFdYLIu1fnBwDo-1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Open Corporate Identity and Cover Concept project in Figma"
-                  >
-                    Open in Figma <span aria-hidden="true">↗</span>
-                  </a>
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img
+                    class="project-card__image"
+                    src="iPad Pro MockUp.png"
+                    alt="Превью корпоративной обложки и визуальной концепции"
+                    loading="lazy"
+                  />
                 </div>
-              </div>
-            </article>
+                <div class="project-card__content">
+                  <p class="project-card__category">Graphic Design &amp; Branding</p>
+                  <h3>Corporate Identity &amp; Cover Concept</h3>
+                  <p>
+                    Разработка визуальной концепции и корпоративной обложки для
+                    компании на основе исследования визуального позиционирования
+                    конкурентов в открытых источниках.
+                  </p>
+                  <ul class="tag-list" aria-label="Навыки проекта">
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                    <li>Branding</li>
+                    <li>Research</li>
+                    <li>Visual Design</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <button
+                      class="button button--case"
+                      type="button"
+                      data-modal-target="modal-cover"
+                      aria-haspopup="dialog"
+                    >
+                      Смотреть кейс
+                    </button>
+                    <a
+                      class="button button--external"
+                      href="https://www.figma.com/design/qLLO3kq0DQ9p4RsUnLdhOi/Lesson-5--Copy-?node-id=0-1&amp;t=mnkFdYLIu1fnBwDo-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Corporate Identity and Cover Concept project in Figma"
+                    >
+                      Open in Figma <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card">
+                <div class="project-card__media">
+                  <img
+                    class="project-card__image"
+                    src="iMac 24 inch.png"
+                    alt="Apple Website Concept web design project"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="project-card__content">
+                  <p class="project-card__category">Web Design &amp; UI/UX</p>
+                  <h3>Apple Website Concept</h3>
+                  <p>
+                    Концепт редизайна веб-сайта Apple, созданный как
+                    современный e-commerce и product showcase experience.
+                    The concept focuses on creating a clean and premium
+                    shopping experience while keeping product discovery simple
+                    and intuitive.
+                  </p>
+                  <ul class="tag-list" aria-label="Навыки проекта">
+                    <li>Figma</li>
+                    <li>Web Design</li>
+                    <li>UI Design</li>
+                    <li>UX</li>
+                    <li>Responsive Design</li>
+                    <li>E-commerce</li>
+                    <li>Product Design</li>
+                  </ul>
+                  <div class="project-card__actions">
+                    <button
+                      class="button button--case"
+                      type="button"
+                      data-modal-target="modal-apple"
+                      aria-haspopup="dialog"
+                    >
+                      Смотреть кейс
+                    </button>
+                    <!-- Replace # with Apple Website Concept public Figma URL -->
+                    <a
+                      class="button button--external"
+                      href="https://www.figma.com/design/R8HaVYrZGOGEIwzo2V55ii/Project?node-id=0-1&t=8aS1PYIwH6DSob3h-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Apple Website Concept project in Figma"
+                    >
+                      Open in Figma <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -404,6 +488,62 @@
               и способов подачи информации была создана собственная визуальная
               система и концепция обложки.
             </p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="modal" id="modal-apple" aria-hidden="true">
+      <div class="modal__overlay" data-modal-close></div>
+      <section
+        class="modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-apple-title"
+        tabindex="-1"
+      >
+        <button class="modal__close" type="button" aria-label="Закрыть кейс" data-modal-close>
+          &times;
+        </button>
+        <p class="project-card__category">Web Design &amp; UI/UX</p>
+        <h2 id="modal-apple-title">Apple Website Concept</h2>
+        <div class="modal__content">
+          <article>
+            <h3>Problem</h3>
+            <p>
+              Большие продуктовые сайты содержат много категорий, моделей и
+              информации, поэтому пользователь может быстро потеряться в
+              навигации или столкнуться с перегруженным интерфейсом.
+            </p>
+            <p>
+              Основная задача заключалась в том, чтобы сохранить большое
+              количество продуктовой информации, но сделать взаимодействие
+              визуально простым и последовательным.
+            </p>
+          </article>
+          <article>
+            <h3>Solution</h3>
+            <p>
+              Была создана минималистичная структура сайта с четкой визуальной
+              иерархией, крупными продуктовыми блоками, разделением товаров по
+              категориям и последовательной навигацией.
+            </p>
+            <p>
+              Интерфейс делает акцент на продуктах, типографике и визуальном
+              контенте, при этом основные действия пользователя остаются легко
+              доступными.
+            </p>
+          </article>
+          <article>
+            <h3>Design Focus</h3>
+            <ul class="modal-focus-list">
+              <li>Product discovery</li>
+              <li>Visual hierarchy</li>
+              <li>Responsive layout</li>
+              <li>Premium visual language</li>
+              <li>Clear navigation</li>
+              <li>Conversion-oriented interface</li>
+            </ul>
           </article>
         </div>
       </section>
