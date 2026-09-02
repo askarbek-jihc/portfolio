@@ -139,6 +139,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     const hash = anchor.getAttribute("href");
 
     if (!hash || hash === "#") {
+      event.preventDefault();
       return;
     }
 
@@ -206,4 +207,110 @@ if ("IntersectionObserver" in window) {
   );
 
   observedSections.forEach((section) => sectionObserver.observe(section));
+}
+
+/* ==============================
+PROJECT CAROUSEL
+============================== */
+const projectCarousel = document.querySelector("[data-project-carousel]");
+const projectTrack = document.querySelector("[data-project-track]");
+const carouselPrev = document.querySelector("[data-carousel-prev]");
+const carouselNext = document.querySelector("[data-carousel-next]");
+const projectCounter = document.querySelector("[data-project-counter]");
+
+function getProjectCards() {
+  if (!projectTrack) {
+    return [];
+  }
+
+  return Array.from(projectTrack.querySelectorAll(".project-card"));
+}
+
+function getCarouselStep() {
+  const cards = getProjectCards();
+  const firstCard = cards[0];
+
+  if (!projectTrack || !firstCard) {
+    return 0;
+  }
+
+  const styles = window.getComputedStyle(projectTrack);
+  const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+
+  return firstCard.getBoundingClientRect().width + gap;
+}
+
+function getActiveProjectIndex() {
+  const cards = getProjectCards();
+
+  if (!projectTrack || !cards.length) {
+    return 0;
+  }
+
+  const trackLeft = projectTrack.getBoundingClientRect().left;
+  let closestIndex = 0;
+  let closestDistance = Number.POSITIVE_INFINITY;
+
+  cards.forEach((card, index) => {
+    const distance = Math.abs(card.getBoundingClientRect().left - trackLeft);
+
+    if (distance < closestDistance) {
+      closestDistance = distance;
+      closestIndex = index;
+    }
+  });
+
+  return closestIndex;
+}
+
+function formatProjectCounter(index, total) {
+  const current = String(index + 1).padStart(2, "0");
+  const count = String(total).padStart(2, "0");
+
+  return `${current} / ${count}`;
+}
+
+function updateCarouselState() {
+  if (!projectTrack) {
+    return;
+  }
+
+  const cards = getProjectCards();
+  const total = cards.length;
+  const maxScrollLeft = projectTrack.scrollWidth - projectTrack.clientWidth;
+  const atStart = projectTrack.scrollLeft <= 2;
+  const atEnd = projectTrack.scrollLeft >= maxScrollLeft - 2;
+
+  if (carouselPrev) {
+    carouselPrev.disabled = atStart;
+  }
+
+  if (carouselNext) {
+    carouselNext.disabled = atEnd;
+  }
+
+  if (projectCounter && total) {
+    projectCounter.textContent = formatProjectCounter(getActiveProjectIndex(), total);
+  }
+}
+
+function scrollProjects(direction) {
+  if (!projectTrack) {
+    return;
+  }
+
+  const step = getCarouselStep();
+
+  projectTrack.scrollBy({
+    left: step * direction,
+    behavior: prefersReducedMotion.matches ? "auto" : "smooth",
+  });
+}
+
+if (projectCarousel && projectTrack) {
+  carouselPrev?.addEventListener("click", () => scrollProjects(-1));
+  carouselNext?.addEventListener("click", () => scrollProjects(1));
+  projectTrack.addEventListener("scroll", updateCarouselState, { passive: true });
+  window.addEventListener("resize", updateCarouselState);
+  updateCarouselState();
 }
