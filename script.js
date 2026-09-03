@@ -314,3 +314,5 @@ if (projectCarousel && projectTrack) {
   window.addEventListener("resize", updateCarouselState);
   updateCarouselState();
 }
+
+
